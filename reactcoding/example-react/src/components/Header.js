@@ -1,10 +1,10 @@
 import React from 'react';
+import logo from '../logo.svg';
 
 const Header = () => {
     return (
         <>
-            <h1>Header</h1>
-            <p>상단메뉴</p>
+            <img src={logo} className="App-logo" alt="logo" />
         </>
     );
 };

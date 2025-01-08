@@ -10,6 +10,17 @@
         "isDefault": true
       },
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "group": "build",
+      "label": "npm: start",
+      "detail": "npm run start",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent"
+      }
     }
   ]
 }

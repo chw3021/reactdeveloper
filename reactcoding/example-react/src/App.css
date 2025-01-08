@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #1e1e1e;
+  color: #ffffff;
 }
 
 .App-logo {
@@ -35,4 +37,61 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.body {
+  box-shadow: 0 4px 8px rgba(239, 237, 237, 0.2);
+  padding: 20px;
+  margin: 30px;
+  background-color: #0c0b0b;
+  border-radius: 10px;
+}
+
+.printData {
+  box-shadow: 0 7px 8px rgba(255, 77, 77, 0.2);
+  padding: 2px;
+  background-color: #595555;
+  border-radius: 10px;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+.table-container table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 20px 0;
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+.table-container th, .table-container td {
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: left;
+}
+
+.table-container td {
+    width: 70%;
+}
+
+.table-container th {
+    text-align: center;
+    background-color: #3c3c3c;
+}
+
+.table-container tr:nth-child(even) {
+    background-color: #3a3a3a;
+}
+
+.table-container tr:nth-child(odd) {
+    background-color: #2c2c2c;
+}
+
+.table-container tr:hover {
+    background-color: #444;
 }
