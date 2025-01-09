@@ -1,6 +1,8 @@
 .body {
     width: 100%;
     border-collapse: collapse;
+    color: #b8b8b8;
+    display: inline;
 }
 
 .body th, .body td {

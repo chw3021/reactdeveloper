@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import Iframe from './subContents/Iframe';
 
 // const Body = () => {
 //     const language = ['React', 'JavaScript', 'Java', 'Servlet', 'SQL'];
@@ -92,6 +93,9 @@ const Body = () =>{
         </div>
     )
 }*/
+function Viewer({number}){
+    return <div>{number % 2 === 0 ? <h3>짝수</h3>:<h3>홀수</h3>}</div>
+}
 
 const Body = () => {   
     const [state, setState] = useState({
@@ -138,47 +142,51 @@ const Body = () => {
         );
     }
  
+    const [number, setNumber] = useState(0);
+    const onIncrease = () => {
+        setNumber(number + 1);
+    };
+    const onDecrease = () => {
+        setNumber(number - 1);
+    };
 
-  return (
+    return (
+        <div className='body'>
 
-    <div className='body'>
+            <div className='content'>
 
-      <div>
+                <div>
+                    <input name="name" value={state.name} onChange={handleOnChange} placeholder="이름" />
+                </div>
 
-        <input name="name" value={state.name} onChange={handleOnChange} placeholder="이름" />
+                <div>
+                    <select name="gender" value={state.gender} onChange={handleOnChange}>
+                        <option key={""} hidden>성별</option>
+                        <option key={"남성"}>남성</option>
+                        <option key={"여성"}>여성</option>
+                    </select>
+                </div>
 
-      </div>
+                <div>
+                    <input name="birth" type="date" value={state.birth} onChange={handleOnChange} />
+                </div>
 
-      <div>
+                <div>
+                    <textarea name="bio" value={state.bio} onChange={handleOnChange} />
+                </div>
+                {renderTable()}
+            </div>
+            <div className='sidebar'>
+                <div>카운트: {number}</div>
+                <Viewer number={number} />
+                <div>
+                    <button onClick={onDecrease}>-</button>
+                    <button onClick={onIncrease}>+</button>
+                </div>
+            </div>
+        </div>
 
-        <select name="gender" value={state.gender} onChange={handleOnChange}>
-
-          <option key={""} hidden>성별</option>
-
-          <option key={"남성"}>남성</option>
-
-          <option key={"여성"}>여성</option>
-
-        </select>
-
-      </div>
-
-      <div>
-
-        <input name="birth" type="date" value={state.birth} onChange={handleOnChange} />
-
-      </div>
-
-      <div>
-
-        <textarea name="bio" value={state.bio} onChange={handleOnChange} />
-
-      </div>
-      {renderTable()}
-
-    </div>
-
-  );
+    );
 }
 
 export default Body;

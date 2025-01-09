@@ -3,6 +3,9 @@ import './App.css';
 import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
+import Say from './components/subContents/Say';
+import EventPractice from './components/subContents/EventPractice';
+import Iframe from './components/subContents/Iframe';
 
 // function App() {
 //   return (
@@ -77,6 +80,7 @@ const App = () => {
     <div className='App'>
       <Header />
       <Body />
+      <Iframe />
       <Footer />
     </div>
   );

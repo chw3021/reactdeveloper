@@ -1,9 +1,9 @@
 import React from 'react';
-import './MyComponent.css';
+import styles from './MyComponent.module.css';
 
 const MyComponent = ({ name, age, email, favoriteNumber, hobbyList, children }) => {
     return (
-        <table className="body">
+        <table className={styles.body}>
             <tbody>
                 <tr>
                     <th>이름</th>
@@ -22,7 +22,7 @@ const MyComponent = ({ name, age, email, favoriteNumber, hobbyList, children }) 
                     <td>{favoriteNumber}</td>
                 </tr>
                 <tr>
-                    <th>좋아하는 명언</th>
+                    <th>좋아하는 인용구</th>
                     <td>"{children}"</td>
                 </tr>
                 <tr>
