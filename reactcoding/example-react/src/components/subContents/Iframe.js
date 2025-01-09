@@ -4,6 +4,7 @@ import EventPractice from './EventPractice';
 import './Iframe.css';
 import MyComponent from './MyComponent';
 import Ref from './Ref';
+import NoticeForm from '../../notice/NoticeForm';
 
 const Iframe = () => {
     
@@ -28,6 +29,8 @@ const Iframe = () => {
         return <MyComponent {...person} >노력은 절대 배신나지 않는다</MyComponent>;
       case 'ref':
         return <Ref />;
+      case 'noticeForm':
+        return <NoticeForm />;
       default:
         return <Say />;
     }
@@ -40,6 +43,7 @@ const Iframe = () => {
         <button onClick={() => setCurrentPage('eventPractice')}>Event Practice</button>
         <button onClick={() => setCurrentPage('myComponent')}>My Component</button>
         <button onClick={() => setCurrentPage('ref')}>Ref</button>
+        <button onClick={() => setCurrentPage('noticeForm')}>NoticeForm</button>
       </div>
       <div className="content-frame">
         {renderPage()}

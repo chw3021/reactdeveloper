@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import Iframe from './subContents/Iframe';
 
 // const Body = () => {
 //     const language = ['React', 'JavaScript', 'Java', 'Servlet', 'SQL'];

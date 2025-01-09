@@ -1,0 +1,144 @@
+
+title{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: aliceblue;
+}
+
+.noticeContainer {
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.noticeTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.noticeTable th, .noticeTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.noticeTable th {
+    background-color: #f2f2f2;
+}
+
+.noticeTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.noticeTable tr:hover {
+    background-color: #ddd;
+}
+
+.noticeForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.inputField, .textareaField {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.textareaField {
+    height: 100px;
+    resize: none;
+}
+
+.submitButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submitButton:hover {
+    background-color: #0056b3;
+}
+.noticeList {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.noticeItem {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    gap: 10px;
+}
+
+.noticeItem:hover {
+    background-color: #ddd;
+}
+
+.noticeIndex {
+    margin-right: 10px; /* 인덱스와 제목 간의 간격 조절 */
+}
+
+.noticeTitle {
+    text-align: left;
+    flex: 1; /* 제목이 가능한 공간을 차지하도록 설정 */
+}
+
+.noticeDate {
+    margin-left: auto; /* 날짜를 우측 끝으로 이동 */
+}
+
+.modal {
+    color: black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
