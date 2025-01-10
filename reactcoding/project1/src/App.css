@@ -1,5 +1,7 @@
 body{
   padding: 20px;
+  color: rgb(210, 210, 210);
+  background-color: rgba(0, 0, 0, 0.972);
 }
 
 
@@ -10,8 +12,8 @@ body{
 
 .App > section {
   padding: 20px;
-  background-color: rgb(245, 245, 245);
-  border: 1px solid rgb(230, 230, 230);
+  background-color: rgba(0, 0, 0, 0.38);
+  border: 1px solid rgb(97, 97, 97);
   border-radius: 5px;
   margin-bottom: 10px;
 }

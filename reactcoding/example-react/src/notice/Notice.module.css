@@ -85,7 +85,7 @@ title{
 .noticeList {
     width: 100%;
     max-width: 600px;
-    margin-top: 20px;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
 }

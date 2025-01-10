@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Say from './components/subContents/Say';
 import EventPractice from './components/subContents/EventPractice';
 import Iframe from './components/subContents/Iframe';
+import NoticeMain from './notice/NoticeMain';
 
 // function App() {
 //   return (
@@ -79,7 +80,6 @@ const App = () => {
   return (
     <div className='App'>
       <Header />
-      <Body />
       <Iframe />
       <Footer />
     </div>
