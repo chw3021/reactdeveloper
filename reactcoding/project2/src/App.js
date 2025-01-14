@@ -1,8 +1,9 @@
 import './App.css';
-import { useState, useRef } from "react";
+import { useReducer, useRef } from "react";
 import Header from'./components/Header'
 import TodoEditer from './components/TodoEditor'
 import TodoList from './components/TodoList';
+import TestComponent from './components/TestComponent';
 
 
 const mockTodo = [
@@ -45,48 +46,76 @@ const mockTodo = [
 
 ];
 
+function reducer(state,action){
+  switch (action.type) {
+    case "CREATE":{
+      return [action.newItem, ...state]
+    }
+    case "UPDATE":{
+      return state.map((it)=>
+        it.id === action.targetID
+        ?{
+          ...it,
+          isDone: !it.isDone,
+        }
+        :it
+      );
+    }
+    case "DELETE":{
+      return state.filter((it)=> it.id !== action.targetID);
+    }
+  
+    default:
+      return state;
+  }
+}
+
 
 function App() {
-  const [todo, setTodo] = useState(mockTodo);
+  const [todo, dispatch] = useReducer(reducer, mockTodo);
 
   const idRef = useRef(3);
 
   const onCreate = (content) => {
 
-    const newItem = {
+    dispatch({
+      type: "CREATE",
+      newItem:{
 
-      id: idRef.current,
-
-      content,
-
-      isDone: false,
-
-      createdDate: new Date().getTime(),
-
-    };
-
-    setTodo([newItem, ...todo]);
+        id: idRef.current,
+  
+        content,
+  
+        isDone: false,
+  
+        createdDate: new Date().getTime(),
+      }
+    })
 
     idRef.current += 1;
 
   };
 
-  const onDelete = (id) => {
-    setTodo(prevTodo => prevTodo.filter(item => item.id !== id));
+  const onUpdate = (targetID) =>{
+    dispatch({
+      type:"UPDATE",
+      targetID,
+    });
+  };
+
+  const onDelete = (targetID) => {
+    dispatch({
+      type:"DELETE",
+      targetID,
+    });
   };
   
-  const handleToggle = (id) => {
-    const updatedItems = todo.map(item =>
-      item.id === id ? { ...item, isDone: !item.isDone } : item
-    );
-    setTodo(updatedItems);
-  };
 
   return (
     <div className="App">
       <Header />
       <TodoEditer onCreate={onCreate} />
-      <TodoList items={todo} onToggle={handleToggle} onDelete={onDelete}/>
+      <TodoList items={todo} onToggle={onUpdate} onDelete={onDelete}/>
     </div>
   );
 }
