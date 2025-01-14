@@ -1,0 +1,16 @@
+.TodoList .search_holder {
+    margin-bottom: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.TodoList .search_holder:focus {
+    outline: none;
+    border-bottom-color: #007BFF;
+}
